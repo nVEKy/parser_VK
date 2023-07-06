@@ -8,7 +8,7 @@ from re import sub
 import spacy
 from pymorphy2 import MorphAnalyzer
 
-TOKEN_USER = 'vk1.a.fsFgV7zP9wLwaRKsEzBb1gLF_hHUGHqyMFdSHtmjZENYwYdVZEfdijvc7Gm2wyIcPdu-XuoNjwoy1j5Js8kojFgUH6nLgIYGYsuEenF3-K1iOunjaY1F4UgsP3un0iC1rrRDiuaK03mltGHvqXOWZYtBI6-cSD2eI4h4Z40aB_tsY-yLa90f6uridaChe5dFsdKX7GbIs8zDtoOcSTsqDw'
+TOKEN_USER = '<token>'
 VERSION = '5.131' 
 DOMAIN = 'localhost'
 GROUPS_COUNT = 100 # максимум 1000
