@@ -18,8 +18,6 @@ COMS_IN_BLOCK = 100 # максимум 100
 COMS_BLOCKS_COUNT = 10
 nlp = spacy.load("ru_core_news_sm")
 
-print(1)
-
 def write_csv_file(data, file_name):
     with open(file_name, 'w', newline='', encoding='utf-8') as csvfile:
         write = writer(csvfile, delimiter = '\n', lineterminator = '\r\n')
@@ -38,15 +36,6 @@ params={'access_token': TOKEN_USER,
         'type': 'group',
         'sort': 6,#сортировка по числу участников
         'count': GROUPS_COUNT})
-
-print(2)
-
-# try:
-#     with open('json_coms.txt', 'w', encoding='utf-8') as f:
-#         print(response1.text, file = f)
-#         print(response2.text, file = f)
-# except OSError as e:
-#     print(e)
 
 groups = response1.json()['response']['items']
 
@@ -70,10 +59,8 @@ for group in groups:
             data_posts.append(res_posts.json()['response'])
         except KeyError:
             continue
-    print(f)
     f+=1
 
-print(3)
             
 print_data_posts = [] 
 for i in range(len(data_posts)):
@@ -92,7 +79,6 @@ for i in range(len(data_posts)):
         try:
             group = [x for x in groups if x['id'] == -post['owner_id']][0]
         except IndexError:
-            print(0)
             continue
         # id
         # post_text
@@ -114,8 +100,6 @@ for i in range(len(data_posts)):
         
 write_csv_file(print_data_posts, 'posts_parsed.csv')
 # write_csv_file(print_data_posts, 'output1.csv')
-
-print(4)
 
 j=0
 for i in range(len(data_posts)):
@@ -158,8 +142,6 @@ for i in range(len(data_posts)):
                 except KeyError:
                     None
             j+=1
-
-print(5)
 
 print_data_coms = []
 for i in range(len(data_coms)):
